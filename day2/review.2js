@@ -1,0 +1,95 @@
+//*** */Bài 10
+const employees10 = [
+    { id: 1, name: "John", workingDays: 22, lateDays: 2, salary: 2000 },
+    { id: 2, name: "Jane", workingDays: 25, lateDays: 0, salary: 2500 },
+    { id: 3, name: "Mark", workingDays: 20, lateDays: 1, salary: 3000 },
+];
+const bestWorkingEmp = employees10.reduce((max, employee) => {
+    const normalEfficient = employee.workingDays / employee.salary;
+    const maxEfficient = max.workingDays / max.salary
+    return normalEfficient > maxEfficient ? employee : max
+})
+console.log("Bài 10: ",bestWorkingEmp);
+
+// function productivity() {
+//     let maxProduct = 0
+//     let bestWorkingEmp = []
+//     for (let i = 0; i < employees10.length; i++) {
+//         const productivity = employees10[i].workingDays / employees10[i].salary;
+//         if(productivity > maxProduct) {
+//             maxProduct = productivity;
+//             bestWorkingEmp = employees10[i]
+//         }
+//     }
+//     return bestWorkingEmp
+// }
+// console.log("Bài 10:",productivity());
+
+//*** */Bài 11
+const employees11 = [
+    { id: 1, name: "John", workingDays: 20 },
+    { id: 2, name: "Jane", workingDays: 22 },
+    { id: 3, name: "Mark", workingDays: 20 },
+    { id: 4, name: "Sam", workingDays: 24 },
+    { id: 5, name: "Lucy", workingDays: 22 },
+];
+function sameWorkingDays() {
+    return employees11.reduce((acc, employee) => {
+        let days = employee.workingDays
+        if(acc[days]) {
+            acc[days]++
+        } else {
+            acc[days] = 1
+        }
+        return acc
+    }, {})
+} 
+// function sameWorkingDays() {
+//     let sameWorkDays = {}
+//     for (let i = 0; i < employees11.length; i++) {
+//         const element = employees11[i]
+//         if(sameWorkDays[element.workingDays]) {
+//             sameWorkDays[element.workingDays]++
+//         } else {
+//             sameWorkDays[element.workingDays] = 1
+//         }
+//     }
+//     return sameWorkDays
+// }
+console.log("Bài 11:",sameWorkingDays());
+
+//*** */Bài 12
+const employees12 = [
+    { id: 1, name: "John", email: "john@example.com", workingDays: 22, lateDays: 2, salary: 2000 },
+    { id: 2, name: "Jane", email: "jane@example.com", workingDays: 20, lateDays: 0, salary: 2500 },
+    { id: 3, name: "Mark", email: "mark@example.com", workingDays: 25, lateDays: 1, salary: 3000 },
+];
+const newInput = employees12.map(employees => {
+    return {
+        name: employees.name,
+        email: employees.email,
+        workInfor: {
+            workingDays : employees.workingDays,
+            lateDays : employees.lateDays
+        }
+    }     
+    })
+console.log("Bài 12:",newInput);
+
+//*** */Bài 13
+let tasks = [ 
+    { name: "Hoàn thành bài tập JavaScript", description: "Làm xong bài tập về Array và Object", completed: false },
+    { name: "Đọc sách", description: "Đọc xong chương 3", completed: true },
+    { name: "Đi mua hàng", description: "Mua thêm thức ăn cho tuần", completed: false }
+];
+// 1.
+function addTask(tasks, name, description, completed) {
+    tasks.push({
+        name: name,
+        description: description,
+        completed: completed
+    }
+    )
+}
+addTask(tasks, "Gym", "Cardio", false)
+console.log("Bài 13/1 :", tasks);

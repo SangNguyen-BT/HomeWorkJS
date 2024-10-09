@@ -46,12 +46,16 @@ console.log("Bài 4:",duplicate());
 
 //*** */Bài 5
 const number = [1, 2, 3, 4, 5, 6]
+<<<<<<< HEAD
 function oddNumber() {return number.filter((x) => x % 2 != 0) }
 
+=======
+function oddNumber() {return number.filter((x) => x / 2 != 0) }
+>>>>>>> origin/master
 // function oddNumber() {
 //     const result = []
 //     for (let i = 0; i < number.length; i++) {
-//         if(number[i] % 2 != 0) {
+//         if(number[i] / 2 != 0) {
 //             result.push(number[i])
 //         }
 //     }
